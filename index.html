@@ -142,6 +142,18 @@
 
     </div>
   </div>
+  <script>
+window.addEventListener("load", function () {
+  const audio = document.getElementById("audio");
+
+  audio.volume = 1; // full sound
+  audio.play().catch(() => {
+    // fallback for browser restrictions
+    document.body.addEventListener("click", () => audio.play(), { once: true });
+  });
+});
+</script>
+
 
   <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
